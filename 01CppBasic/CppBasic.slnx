@@ -1,0 +1,27 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="Array/Array.vcxproj" Id="71f065b1-b000-4061-a6a5-2c4acafc9cb6" />
+  <Project Path="BuildProcess/BuildProcess.vcxproj" Id="c14e882c-bfae-4e10-9910-93206ae282d7" />
+  <Project Path="Class/Class.vcxproj" Id="cc2fba7e-0795-41f7-92b4-adba953e895c" />
+  <Project Path="ClassInheritance/ClassInheritance.vcxproj" Id="8681a991-a0fb-436c-ac5a-1cd4e36d5100" />
+  <Project Path="ConsoleInput/ConsoleInput.vcxproj" Id="b90724a7-f7f2-4a5b-8e55-7b6e7ba2a0dd" />
+  <Project Path="ConsoleIO/ConsoleIO.vcxproj" Id="640cbf62-334c-4339-a6fd-b830dbfcc3da" />
+  <Project Path="CopyConstructor/CopyConstructor.vcxproj" Id="553b4da0-c832-4b58-9797-785870c693a0" />
+  <Project Path="CustomRTTI/CustomRTTI.vcxproj" Id="57c68fb8-c109-4da1-b450-8a7555c716ab" />
+  <Project Path="FileIO_C/FileIO_C.vcxproj" Id="bbb0bfec-f4ed-4392-9540-b2cce776fb39" />
+  <Project Path="ForwardDeclaration/ForwardDeclaration.vcxproj" Id="a95e6369-87d9-4eeb-a0d5-d65824b2ec60" />
+  <Project Path="FunctionPointer/FunctionPointer.vcxproj" Id="db39398f-abcb-43f5-b722-c06fddb9e783" />
+  <Project Path="Functor/Functor.vcxproj" Id="affcab3f-2926-4517-9ab7-c4ec90fd450f" />
+  <Project Path="OperatorOverloading/OperatorOverloading.vcxproj" Id="1ef969cd-1e02-4eee-88a9-b89229967d0d" />
+  <Project Path="Pointer/Pointer.vcxproj" Id="faf563f2-25af-444b-b7ea-d3266cbb9346" />
+  <Project Path="RTTI/RTTI.vcxproj" Id="84fc2ba0-dce2-4097-99e3-48e587916f2d" />
+  <Project Path="SharedPtr/SharedPtr.vcxproj" Id="14414c32-b616-4df9-a85d-9cf860c22c89" />
+  <Project Path="Static/Static.vcxproj" Id="dfbf1e93-bf2f-4a6f-93c4-1db2a5256a3c" />
+  <Project Path="String/String.vcxproj" Id="5dc78a99-2552-4603-9949-f1be08869cca" />
+  <Project Path="Template/Template.vcxproj" Id="fd54062e-3411-4376-a79f-024fc5dda293" />
+  <Project Path="UniquePtr/UniquePtr.vcxproj" Id="72071d39-7e1f-4b25-87f6-f44281fb174e" />
+  <Project Path="ValueCategory/ValueCategory.vcxproj" Id="508fcac6-2f69-4e0b-8e23-4d41d9796e2c" />
+  <Project Path="Virtual/Virtual.vcxproj" Id="f098d798-fdfa-46fa-8414-b20fb30ec7dc" />
+</Solution>
