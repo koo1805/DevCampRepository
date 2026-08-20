@@ -1,4 +1,4 @@
-#include "List.h"
+﻿#include "List.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -26,4 +26,17 @@ int main()
 	{
 		std::cout << value << "\n";
 	}
+
+	std::cout << "================================================================================\n";
+
+	// 이터레이터 기반 루프 순회
+	// STL이 이터레이터를 구현한 이유
+	// => 
+	for (auto iterator = characterList.begin();
+		iterator != characterList.end();
+		++iterator)
+	{
+		std::cout << (*iterator) << "\n";
+	}
+
 }
