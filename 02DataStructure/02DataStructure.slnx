@@ -3,8 +3,11 @@
     <Platform Name="x64" />
   </Configurations>
   <Project Path="Array/Array.vcxproj" Id="9f803213-373f-450c-9b7b-3bd0350cb5b3" />
+  <Project Path="Deque/Deque.vcxproj" Id="5698a861-a32c-4fd3-adab-bb1147f8d469" />
   <Project Path="LinkedList/LinkedList.vcxproj" Id="7aa10cd8-eb4a-4b90-957a-d8ee2aad0f60" />
   <Project Path="List/List.vcxproj" Id="2c9cd12a-006a-4e7e-8ddc-1cd59bd6c4c3" />
+  <Project Path="Queue/Queue.vcxproj" Id="af5b02fb-119e-4a10-8834-20b36e692470" />
+  <Project Path="QueueMaze/QueueMaze.vcxproj" Id="f92bb3ae-8bc6-4711-a71b-90a5e4efe5c2" />
   <Project Path="Stack/Stack.vcxproj" Id="f551ea0f-f837-411e-b6a5-0ffb55335f84" />
   <Project Path="StackMaze/StackMaze.vcxproj" Id="bd09132a-79e0-4665-b8ba-c44817b6cf20" />
 </Solution>
