@@ -11,4 +11,5 @@
   <Project Path="QueueMaze/QueueMaze.vcxproj" Id="f92bb3ae-8bc6-4711-a71b-90a5e4efe5c2" />
   <Project Path="Stack/Stack.vcxproj" Id="f551ea0f-f837-411e-b6a5-0ffb55335f84" />
   <Project Path="StackMaze/StackMaze.vcxproj" Id="bd09132a-79e0-4665-b8ba-c44817b6cf20" />
+  <Project Path="Tree/Tree.vcxproj" Id="624f1c0c-262a-416e-9071-62be223132af" />
 </Solution>
