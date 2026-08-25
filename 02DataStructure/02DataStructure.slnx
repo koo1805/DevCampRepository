@@ -3,6 +3,7 @@
     <Platform Name="x64" />
   </Configurations>
   <Project Path="Array/Array.vcxproj" Id="9f803213-373f-450c-9b7b-3bd0350cb5b3" />
+  <Project Path="BinarySearchTree/BinarySearchTree.vcxproj" Id="535c0944-679a-4954-8b6c-cebd45db7b6a" />
   <Project Path="BinaryTree/BinaryTree.vcxproj" Id="601b93da-1bb0-4f86-84a6-edf93aea4d35" />
   <Project Path="Deque/Deque.vcxproj" Id="5698a861-a32c-4fd3-adab-bb1147f8d469" />
   <Project Path="HashTable/HashTable.vcxproj" Id="001e476c-ece6-4a10-966a-0317ad14a063" />
