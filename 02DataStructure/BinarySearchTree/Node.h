@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 // 노드 삭제 함수
 template<typename T>
@@ -33,8 +33,14 @@ private:
 
 	~Node()
 	{
-		SafeDelete(left);
-		SafeDelete(right);
+		delete left;
+		left = nullptr;
+
+		delete right;
+		right = nullptr;
+
+		//SafeDelete(left);
+		//SafeDelete(right);
 	}
 
 	// 복사 방지
