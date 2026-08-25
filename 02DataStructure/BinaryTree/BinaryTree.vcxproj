@@ -16,7 +16,7 @@
     <ProjectGuid>{601b93da-1bb0-4f86-84a6-edf93aea4d35}</ProjectGuid>
     <RootNamespace>BinaryTree</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>BinaryTree2</ProjectName>
+    <ProjectName>BinaryTree</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
