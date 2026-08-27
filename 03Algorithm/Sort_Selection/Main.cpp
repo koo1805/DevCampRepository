@@ -1,7 +1,9 @@
 ﻿#include <iostream>
+#include <functional>
 
 // 로직 주입을 위한 함수 포인터 타입 선언
-using Comparer = bool (*)(int, int);
+//using Comparer = bool (*)(int, int);		// -> 기존 함수포인터 선언
+using Comparer = std::function<bool(int, int)>;
 
 // 비교 함수
 bool Less(int a, int b) { return a < b; }
@@ -78,16 +80,21 @@ int main()
 	// 데이터 수
 	const int length = _countof(array);
 
+	// 출력
 	std::cout << "정렬 전 출력";
 	PrintArray(array, length);
 	
 	//SelectionSort(array, length);
 	Greater<int> greater;
+	SelectionSort(array, length, greater);
+
+
+	/*
 	SelectionSort(
 		array,
 		length,
 		[](int a, int b) {return a > b;}
-	);
+	);	//*/
 	
 	std::cout << "정렬 후 출력";
 	PrintArray(array, length);
