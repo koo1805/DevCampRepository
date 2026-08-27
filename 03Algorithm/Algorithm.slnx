@@ -6,4 +6,5 @@
   <Project Path="BruteForce/BruteForce.vcxproj" Id="f06a79eb-cdcb-423c-a0d8-866403464eba" />
   <Project Path="Random/Random.vcxproj" Id="e119fc48-e36d-47f2-a229-ce1db141bf75" />
   <Project Path="Recursive/Recursive.vcxproj" Id="b5cf32dd-faac-4a1e-acb0-1b5e1f6b4618" />
+  <Project Path="Sort_Bubble/Sort_Bubble.vcxproj" Id="379af963-2cd1-45f5-b70b-ef478691780b" />
 </Solution>
