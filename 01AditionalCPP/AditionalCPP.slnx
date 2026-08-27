@@ -3,4 +3,5 @@
     <Platform Name="x64" />
   </Configurations>
   <Project Path="Pointer/Pointer.vcxproj" Id="22366c6c-2d7b-4331-a18e-2984d3171848" />
+  <Project Path="Reference/Reference.vcxproj" Id="306cc7ae-8866-4e8f-8016-ac0028620f67" />
 </Solution>
