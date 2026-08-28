@@ -8,6 +8,7 @@
   <Project Path="Recursive/Recursive.vcxproj" Id="b5cf32dd-faac-4a1e-acb0-1b5e1f6b4618" />
   <Project Path="Sort_Bubble/Sort_Bubble.vcxproj" Id="379af963-2cd1-45f5-b70b-ef478691780b" />
   <Project Path="Sort_Insertion/Sort_Insertion.vcxproj" Id="2983a4c1-20fa-4c0e-8f08-a23a74cac889" />
+  <Project Path="Sort_Merge/Sort_Merge.vcxproj" Id="91716eb4-793d-44c4-881b-94c5e42cd49e" />
   <Project Path="Sort_Quick/Sort_Quick.vcxproj" Id="f20bfd9b-5c7e-457d-b5df-f85c31579413" />
   <Project Path="Sort_Selection/Sort_Selection.vcxproj" Id="823bce62-3c4d-4f80-b97e-2ecb17b18cc4" />
 </Solution>
