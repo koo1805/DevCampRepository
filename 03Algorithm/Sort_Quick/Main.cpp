@@ -118,7 +118,7 @@ void BubbleSort(int* array, int length, Comparer comparer = Less)
 {
 	for (int ix = 0; ix < length - 1; ++ix)
 	{
-		for (int jx = 0; jx < length - 1 - jx; ++jx)
+		for (int jx = 0; jx < length - 1 - ix; ++jx)
 		{
 			if (comparer(array[jx], array[jx + 1]))
 			{
@@ -126,6 +126,16 @@ void BubbleSort(int* array, int length, Comparer comparer = Less)
 			}
 		}
 	}
+}
+
+int CompareTwoInts(const void* a, const void* b)
+{
+	int arg1 = *(const int*)a;
+	int arg2 = *(const int*)b;
+
+	if (arg1 < arg2) return -1;
+	if (arg1 > arg2) return 1;
+	return 0;
 }
 
 int main()
@@ -180,9 +190,22 @@ int main()
 	// 메모리 복사 -> 빠름
 	memcpy(array, orignal, sizeof(int) * length);
 
+	// 라이브러리 qsort함수 사용
+
 	// 시간 재보기
 	// 시작 시간 기록
 	start = GetTime();
+	qsort(array, length, sizeof(int), CompareTwoInts);
+	end = GetTime();
+
+	// 경과 시간 출력
+	std::cout << "qSort elapsed time: " << GetElapsedTime(start, end) << "\n";
+
+
+
+
+	// 메모리 복사 -> 빠름
+	memcpy(array, orignal, sizeof(int) * length);
 
 	// 정렬
 	QuickSort(array, 0, length - 1, LessEqual);
