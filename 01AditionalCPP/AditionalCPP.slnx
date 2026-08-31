@@ -3,6 +3,7 @@
     <Platform Name="x64" />
   </Configurations>
   <Project Path="ArrayAndPointer/ArrayAndPointer.vcxproj" Id="0c988258-91e5-4594-9ba2-0ea656cec5dd" />
+  <Project Path="Class/Class.vcxproj" Id="89961666-0aec-4ec5-a11f-3dbfcf791e8a" />
   <Project Path="Pointer/Pointer.vcxproj" Id="22366c6c-2d7b-4331-a18e-2984d3171848" />
   <Project Path="Reference/Reference.vcxproj" Id="306cc7ae-8866-4e8f-8016-ac0028620f67" />
 </Solution>
