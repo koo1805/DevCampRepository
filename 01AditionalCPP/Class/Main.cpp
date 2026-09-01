@@ -3,6 +3,8 @@
 class Character
 {
 public:
+	virtual ~Character() = default;
+
 	float attack = 10.0f;
 
 	virtual void Attack()
@@ -23,6 +25,11 @@ public:
 		Character::Attack();
 
 		std::cout << "armor: " << armor << "\n";
+	}
+
+	void UseShield()
+	{
+		std::cout << "쉴드 사용";
 	}
 };
 
@@ -85,5 +92,13 @@ int main()
 	for (Character* const character : level)
 	{
 		character->Attack();
+
+		// Warrior로 형변환 (Down-casting)
+		//Warrior* warrior = (Warrior*)character;
+		Warrior* warrior = dynamic_cast<Warrior*>(character);
+		if (warrior)
+		{
+			warrior->UseShield();
+		}
 	}
 }
