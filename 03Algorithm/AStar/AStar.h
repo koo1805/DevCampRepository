@@ -14,11 +14,23 @@ private:
 		float cost = 0.0f;
 	};
 
+	// 그리드 타일 종류(열거형) - 강타입 열거형
+	// char 타입 -> 문자 타입 -> 숫자
+	// 문자 타입으로 활용/1byte 크기를 할당하고 싶을 때 많이 활용
+	enum class TileType : char
+	{
+		Ground = 0,
+		Wall = 1,
+		Start = 2,
+		Goal = 3,
+		Visited = 5,
+	};
+
 public:
 	AStar();
 	~AStar();
 
-	// 메세지(객체지향 프로그래밍 용어) - 공개 메소드
+	// 메세지(객체지향 프로그래밍 용어) - 공개 메소드(인터페이스)
 
 	// 경로 탐색 요청 함수
 	std::vector<Position> FindPath(const Position& startPosition, const Position& goalPosition, std::vector<std::vector<int>>& grid);
@@ -27,7 +39,8 @@ public:
 	void DisplayGridWithPath(std::vector<std::vector<int>>& grid, const std::vector<Position>& path);
 
 private:
-	// 메소드
+	// ==================================== 메소드 ====================================
+	// 클래스 또는 구조체가 가지는 함수 // 
 
 	// 이전 탐색에 사용한 정보 및 노드를 정리하는 함수
 	void Clear();
