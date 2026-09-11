@@ -2,5 +2,5 @@
   <Configurations>
     <Platform Name="x64" />
   </Configurations>
-  <Project Path="CraftRender/CraftRender.vcxproj" />
+  <Project Path="CraftRender/CraftRender.vcxproj" Id="d00874c7-4295-474d-b6ee-d7b4b03e540f" />
 </Solution>
