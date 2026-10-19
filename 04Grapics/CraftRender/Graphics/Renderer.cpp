@@ -1,16 +1,36 @@
 ﻿#include "Renderer.h"
+#include <Core/Win32Window.h>
 #include <cstdint>
 
 namespace Craft
 {
-	Renderer::Renderer()
+	Renderer::Renderer(const Win32Window& window)
 	{
+		// Device와 Context생성
 		CreateDevice();
+
+		// 스왑체인 생성
+		CreateSwapChain(window);
 	}
 
 	Renderer::~Renderer()
 	{
-
+		// 리소스 해제
+		if (device)
+		{
+			device->Release();
+			device = nullptr;
+		}
+		if (context)
+		{
+			context->Release();
+			context = nullptr;
+		}
+		if (swapChain)
+		{
+			swapChain->Release();
+			swapChain = nullptr;
+		}
 	}
 
 	void Renderer::CreateDevice()
@@ -57,5 +77,69 @@ namespace Craft
 			nullptr,	//&selectedFeatureLevel,
 			&context
 		);
+
+		// 실패 확인
+		if (FAILED(result))
+		{
+			__debugbreak();
+			MessageBoxA(nullptr, "failed to create device", "D3D error", MB_OK);
+		}
+	}
+
+	void Renderer::CreateSwapChain(const Win32Window& window)
+	{
+		// 스왑체인 생성을 위한 객체 생성
+		IDXGIFactory* factory = nullptr;
+
+		//auto result = CreateDXGIFactory(__uuidof(IDXGIFactory), reinterpret_cast<void**>(&factory));
+		auto result = CreateDXGIFactory(IID_PPV_ARGS(&factory));
+
+		if (FAILED(result))
+		{
+			__debugbreak();
+
+			return;
+		}
+
+		/*
+		* 
+		DXGI_MODE_DESC BufferDesc;
+		DXGI_SAMPLE_DESC SampleDesc;
+		DXGI_USAGE BufferUsage;
+		UINT BufferCount;
+		HWND OutputWindow;
+		BOOL Windowed;
+		DXGI_SWAP_EFFECT SwapEffect;
+		UINT Flags;
+		* 
+		*/
+
+		DXGI_SWAP_CHAIN_DESC swapChainDesc = {};
+		swapChainDesc.BufferDesc.Width = window.GetWidth();
+		swapChainDesc.BufferDesc.Height = window.GetHeight();
+		swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+		swapChainDesc.SampleDesc.Count = 1;								// 안티 앨리어싱 -> 픽셀 몇개를 뭉갤건지
+		swapChainDesc.SampleDesc.Quality = 0;
+		swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+		swapChainDesc.BufferCount = 2;									// 버퍼 개수
+		swapChainDesc.OutputWindow = window.GetHandle();				// 만든 버퍼 출력 위치
+		swapChainDesc.Windowed = true;									// 창 모드 실행 여부
+		swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;		// 복사 안하고 넘겨주기 -> 다른건 msdn확인
+
+		// 스왑체인 생성
+		result = factory->CreateSwapChain(device, &swapChainDesc, &swapChain);
+
+		if (FAILED(result))
+		{
+			__debugbreak();
+			return;
+		}
+
+		// 해제
+		if (factory)
+		{
+			factory->Release();
+			factory = nullptr;
+		}
 	}
 }
