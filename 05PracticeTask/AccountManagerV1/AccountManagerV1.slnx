@@ -2,5 +2,5 @@
   <Configurations>
     <Platform Name="x64" />
   </Configurations>
-  <Project Path="AccountManager/AccountManager.vcxproj" />
+  <Project Path="AccountManager/AccountManager.vcxproj" Id="71481c1e-9c15-4604-9f5d-1af99cfd82e7" />
 </Solution>
