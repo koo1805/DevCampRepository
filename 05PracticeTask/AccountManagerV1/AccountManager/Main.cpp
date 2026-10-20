@@ -8,8 +8,13 @@ int main()
 	//account.ShowInfo();
 
 	Bank bank;
-	bank.Inquire();
-	bank.CreateAccount();
-	bank.CreateAccount();
-	bank.Inquire();
+	bank.Run();
+
+	/* Test Code
+	int TargetId;
+	std::cout << "test: ";
+	std::cin >> TargetId;
+	std::cout << bank.FindAccount(TargetId); //*/
+
+	return 0;
 }
