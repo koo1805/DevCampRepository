@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include "Account.h"
 #include "Bank.h"
 
@@ -8,9 +8,31 @@ int main()
 	//account.ShowInfo();
 
 	Bank bank;
-	bank.Run();
+	//bank.Run();
 
-	/* Test Code
+	//*	Test Code 02
+	Account original(1001, "Kim", 10000);
+	Account copy(original);
+	original.ShowInfo();
+	copy.ShowInfo();
+
+	std::cout << "====================\n";
+	std::cout << (&original != &copy) << '\n';
+	std::cout << (original.GetName() != copy.GetName()) << '\n';
+	std::cout << (std::strcmp(original.GetName(), copy.GetName()) == 0) << '\n';
+	std::cout << "====================\n";
+
+	original.Deposit(3000);
+	original.SetName("Lee");
+	original.ShowInfo();
+	std::cout << "- - - - - - - -\n";
+	copy.ShowInfo();
+
+	std::cout << "====================\n";
+	std::cout << "Original: " << &original << "\n";
+	std::cout << "C o p y : " << &copy << "\n";				//*/
+
+	/* Test Code 01
 	int TargetId;
 	std::cout << "test: ";
 	std::cin >> TargetId;

@@ -12,6 +12,16 @@ Account::Account(int Id, const char* Name, int Balance)
 	strcpy_s(this->Name, NameLength01, Name);
 }
 
+Account::Account(const Account& other)
+	: Id(other.Id), Balance(other.Balance)
+{
+	size_t NameLength01 = strlen(other.Name) + 1;
+
+	Name = new char[NameLength01];
+
+	strcpy_s(Name, NameLength01, other.Name);
+}
+
 Account::~Account()
 {
 	if (Name != nullptr)
@@ -46,4 +56,16 @@ bool Account::WithDraw(int Amount)
 		Balance -= Amount;
 		return true;
 	}
+}
+
+void Account::SetName(const char* NewName)
+{
+	size_t NameLength01 = strlen(NewName) + 1;
+
+	delete[] Name;
+	Name = nullptr;
+
+	Name = new char[NameLength01];
+
+	strcpy_s(Name, NameLength01, NewName);
 }

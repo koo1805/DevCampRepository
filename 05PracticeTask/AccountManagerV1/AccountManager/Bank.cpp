@@ -155,7 +155,7 @@ void Bank::Run()
 			IsActiveTitle = true;
 		}
 		
-		char SelectNum = 0;
+		char SelectNum = {};
 
 		std::cout << "\n=== Menu ===\n\n";
 		std::cout << "1. 계좌 생성\n"
