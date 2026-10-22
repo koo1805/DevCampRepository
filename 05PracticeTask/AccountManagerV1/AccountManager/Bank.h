@@ -9,7 +9,10 @@ public:
 	~Bank();
 
 public:
+	void SelectAccount();
 	void CreateAccount();
+	void CreateCreditAccount();
+	void CreateDonationAccount();
 	void Inquire() const;
 	void Deposit();
 	void WithDraw();
@@ -17,6 +20,8 @@ public:
 	Account* FindAccount(int TargetId) const;
 
 	void Run();
+
+	void TestAccount();
 
 private:
 	Account* accounts[100] = {};

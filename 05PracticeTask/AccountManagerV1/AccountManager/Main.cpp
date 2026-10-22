@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 #include "Account.h"
+#include "CreditAccount.h"
+#include "DonationAccount.h"
 #include "Bank.h"
 
 int main()
@@ -8,9 +10,22 @@ int main()
 	//account.ShowInfo();
 
 	Bank bank;
-	//bank.Run();
+	bank.Run();
 
-	//*	Test Code 02
+	/* Test Code 03 =================================================================================
+	CreditAccount credit(1001, "Kim", 0);
+	Account* cAccount = &credit;
+	cAccount->Deposit(10000);
+	cAccount->ShowInfo();
+
+	DonationAccount donation(1002, "asd", 0);
+	Account* dAccount = &donation;
+	dAccount->Deposit(10000);
+	dAccount->ShowInfo();
+	dAccount->Deposit(10000);
+	dAccount->ShowInfo();		//*/
+
+	/* Test Code 02 =================================================================================
 	Account original(1001, "Kim", 10000);
 	Account copy(original);
 	original.ShowInfo();
@@ -32,7 +47,7 @@ int main()
 	std::cout << "Original: " << &original << "\n";
 	std::cout << "C o p y : " << &copy << "\n";				//*/
 
-	/* Test Code 01
+	/* Test Code 01 =================================================================================
 	int TargetId;
 	std::cout << "test: ";
 	std::cin >> TargetId;

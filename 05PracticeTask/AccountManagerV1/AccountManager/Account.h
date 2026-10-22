@@ -19,7 +19,7 @@ public:
 
 	void SetName(const char* NewName);
 
-private:
+protected:
 	int Id = 0;
 	char* Name = nullptr;
 	int Balance = 0;
