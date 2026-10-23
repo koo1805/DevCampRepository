@@ -1,8 +1,9 @@
 ﻿#include "DonationAccount.h"
 
 #include <iostream>
+#include <fstream>
 
-DonationAccount::DonationAccount(int Id, const char* Name, int Balance)
+DonationAccount::DonationAccount(int Id, const char* Name, int Balance, int DontaionTotal)
 	: Account(Id, Name, Balance)
 {
 
@@ -28,4 +29,9 @@ void DonationAccount::Deposit(int Amount)
 		Amount -= Amount / 100;
 		Account::Deposit(Amount);
 	}
+}
+
+void DonationAccount::Save(std::ostream& Out) const
+{
+	WriteRecord(Out, 3, DonationTotal);
 }

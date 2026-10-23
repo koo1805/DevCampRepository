@@ -19,9 +19,14 @@ public:
 
 	Account* FindAccount(int TargetId) const;
 
+	bool Save(const char* path) const;
+	bool Load(const char* path);
+
 	void Run();
 
 	void TestAccount();
+
+	inline void SetCount(int NewCount) { count = NewCount; }
 
 private:
 	Account* accounts[100] = {};

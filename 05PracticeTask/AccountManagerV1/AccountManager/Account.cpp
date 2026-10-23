@@ -1,5 +1,6 @@
 ﻿#include "Account.h"
 #include <iostream>
+#include <fstream>
 #include <cstring>
 
 Account::Account(int Id, const char* Name, int Balance)
@@ -26,6 +27,7 @@ Account::~Account()
 {
 	if (Name != nullptr)
 	{
+		std::cout << "소멸\n";
 		delete[] Name;
 		Name = nullptr;
 	}
@@ -68,4 +70,16 @@ void Account::SetName(const char* NewName)
 	Name = new char[NameLength01];
 
 	strcpy_s(Name, NameLength01, NewName);
+}
+
+void Account::Save(std::ostream& Out) const
+{
+	WriteRecord(Out, 1, 0);
+}
+
+void Account::WriteRecord(std::ostream& Out, int Type, int Donation) const
+{
+	// 데이터 기록
+	char Space = ' ';
+	Out << Type << Space << Id << Space << Name << Space << Balance << Space << Donation << "\n";
 }

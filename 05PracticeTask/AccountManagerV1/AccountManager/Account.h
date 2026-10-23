@@ -1,4 +1,7 @@
 ﻿#pragma once
+
+#include <fstream>
+
 class Account
 {
 public:
@@ -18,6 +21,11 @@ public:
 	bool WithDraw(int Amount);
 
 	void SetName(const char* NewName);
+
+	virtual void Save(std::ostream& Out) const;
+
+protected:
+	void WriteRecord(std::ostream& Out, int Type, int Donation) const;
 
 protected:
 	int Id = 0;

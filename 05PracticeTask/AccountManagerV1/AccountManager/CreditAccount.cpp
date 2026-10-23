@@ -1,6 +1,7 @@
 ﻿#include "CreditAccount.h"
 
 #include <iostream>
+#include <fstream>
 
 CreditAccount::CreditAccount(int Id, const char* Name, int Balance)
 	: Account(Id, Name, Balance)
@@ -26,4 +27,9 @@ void CreditAccount::Deposit(int Amount)
 		Amount += Amount / 100;
 		Account::Deposit(Amount);
 	}
+}
+
+void CreditAccount::Save(std::ostream& Out) const
+{
+	WriteRecord(Out, 2, 0);
 }

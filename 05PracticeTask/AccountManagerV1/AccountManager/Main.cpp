@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <fstream>
+
 #include "Account.h"
 #include "CreditAccount.h"
 #include "DonationAccount.h"
@@ -11,6 +13,25 @@ int main()
 
 	Bank bank;
 	bank.Run();
+
+	/* Test Code 04 =================================================================================
+	//bank.TestAccount();
+	bank.Load("Account.txt");
+	bank.Inquire();
+
+	//bank.Save("Account.txt"); //*/
+
+	/* Test Code 04 =================================================================================
+	Account original(1001, "Kim", 10000);
+
+	std::ofstream TestSave("Test.txt");
+	if (false == TestSave.is_open())
+	{
+		std::cout << "FAil\n";
+		return 1;
+	}
+
+	original.Save(TestSave);		//*/
 
 	/* Test Code 03 =================================================================================
 	CreditAccount credit(1001, "Kim", 0);

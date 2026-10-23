@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 Bank::Bank()
 {
@@ -227,9 +228,108 @@ Account* Bank::FindAccount(int TargetId) const
 	return nullptr;
 }
 
+bool Bank::Save(const char* path) const
+{
+	// 파일 열었는지 확인
+	std::ofstream SaveFile(path);
+	if (false == SaveFile.is_open())
+	{
+		std::cout << "File is not open\n";
+		return false;
+	}
+
+	if (count <= 0)
+	{
+		std::cout << "File is open but no count\n";
+
+		SaveFile << count << "\n";
+		SaveFile.close();
+
+		return true;
+	}
+	else
+	{
+		std::cout << "File is save\n";
+
+		SaveFile << count << "\n";
+
+		for (int ix = 0; ix < count; ++ix)
+		{
+			accounts[ix]->Save(SaveFile);
+		}
+
+		/*
+		for (Account* SaveAccount : accounts)
+		{
+			std::cout << "Save Account\n";
+			SaveAccount->Save(SaveFile);
+		}		//*/
+
+		SaveFile.close();
+
+		return true;
+	}
+	
+	return true;
+}
+
+bool Bank::Load(const char* path)
+{
+	std::ifstream LoadFile(path);
+	if (false == LoadFile.is_open())
+	{
+		std::cout << "File is not open\n";
+		return false;
+	}
+
+	int CountData = 0;
+	int TypeData = 0;
+	int IdData = 0;
+	char NameData[256] = { };
+	int BalanceData = 0;
+	int DonationData = 0;
+
+	LoadFile >> CountData;
+	SetCount(CountData);
+
+	for (int ix = 0; ix < CountData; ++ix)
+	{
+		LoadFile >> TypeData;
+		switch (TypeData)
+		{
+		case 1:
+			LoadFile >> IdData >> NameData >> BalanceData >> DonationData;
+			accounts[ix] = new Account(IdData, NameData, BalanceData);
+			std::cout << "일반 계좌 생성\n";
+			break;
+
+		case 2:
+			LoadFile >> IdData >> NameData >> BalanceData >> DonationData;
+			accounts[ix] = new CreditAccount(IdData, NameData, BalanceData);
+			std::cout << "신용 계좌 생성\n";
+			break;
+
+		case 3:
+			LoadFile >> IdData >> NameData >> BalanceData >> DonationData;
+			accounts[ix] = new DonationAccount(IdData, NameData, BalanceData, DonationData);
+			std::cout << "기부 계좌 생성\n";
+			break;
+
+		default:
+			return false;
+		}
+	}
+
+	LoadFile.close();
+
+	return true;
+}
+
 void Bank::Run()
 {
 	TestAccount();
+
+	//Load("Account.txt");
 
 	while (true)
 	{
@@ -254,6 +354,14 @@ void Bank::Run()
 
 		if (SelectNum == 'q' || SelectNum == 'Q')
 		{
+			Save("Account.txt");
+
+			for (Account* deleteAccount : accounts)
+			{
+				delete[] deleteAccount;
+				deleteAccount = nullptr;
+			}
+
 			return;
 		}
 
